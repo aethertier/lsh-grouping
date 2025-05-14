@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lsh-grouping"
+description = "An implementation of Locality-Sensitive Hashing (LSH) to cluster large, sparse, high-dimensional binary data."
+dynamic = ["version"]
+readme = {file = "README.md", content-type = "text/markdown"}
+license = {file = "LICENSE"}
+authors = [
+    {name = "David Bickel"},
+]
+requires-python = ">= 3"
+dependencies = [
+    "numpy",
+    "scikit-learn",
+    "datasketch"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["clustering", "fingerprint"]
+
+[project.urls]
+Repository = "https://github.com/aethertier/lsh-grouping.git"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "lshgrouping.__version__"}
